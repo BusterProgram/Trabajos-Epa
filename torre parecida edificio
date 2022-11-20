@@ -1,0 +1,51 @@
+programa ejem6
+procesos
+  proceso posi
+  comenzar
+    Pos(PosAv+1,PosCa+5)
+  fin
+  proceso posi2
+  comenzar
+    Pos(PosAv+1,PosCa+3)
+  fin
+  proceso Cuadrados1
+  comenzar
+    repetir 4
+      mover
+      derecha
+  fin
+  proceso Cuadrados3
+  comenzar
+    repetir 4
+      mover
+      mover
+      mover
+      derecha
+  fin
+  proceso Cuadrados4
+  comenzar
+    repetir 4
+      mover
+      mover
+      mover
+      mover
+      mover
+      derecha
+  fin
+areas
+  ciudad: AreaC(1,1,100,100)
+robots
+  robot robot1
+  comenzar
+    Cuadrados4
+    posi
+    Cuadrados3
+    posi2
+    Cuadrados1
+  fin
+variables
+  R-info:robot1
+comenzar
+  AsignarArea(R-info,ciudad)
+  Iniciar(R-info,1,1)
+fin
