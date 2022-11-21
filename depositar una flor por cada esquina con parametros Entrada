@@ -1,0 +1,28 @@
+programa ejem6
+procesos
+  proceso unamenosv1 (E FloresIniciales : numero)
+  variables
+    cuantas : numero
+  comenzar
+    cuantas:= FloresIniciales
+    mientras  (PosCa<11)
+      repetir cuantas
+        depositarFlor
+        mover
+        cuantas := cuantas -1
+  fin
+areas
+  ciudad: AreaC(1,1,100,100)
+robots
+  robot robot1
+  variables
+    long : numero
+  comenzar
+    unamenosv1 (10)
+  fin
+variables
+  R-info:robot1
+comenzar
+  AsignarArea(R-info,ciudad)
+  Iniciar(R-info,1,1)
+fin
