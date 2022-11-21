@@ -1,0 +1,35 @@
+programa ejem6
+procesos
+  proceso SumarFlores (ES flores : numero)
+  variables
+    aux : numero
+  comenzar
+    aux:= 0
+    mientras (HayFlorEnLaEsquina)
+      tomarFlor
+      aux:= aux +1
+      flores:= flores +1
+    repetir aux
+      depositarFlor
+  fin
+areas
+  ciudad: AreaC(1,1,100,100)
+robots
+  robot robot1
+  variables
+    TotalFlores : numero
+  comenzar
+    Pos(4,1)
+    TotalFlores:= 0
+    repetir 99
+      SumarFlores(TotalFlores)
+      mover
+    SumarFlores(TotalFlores)
+    Informar (TotalFlores)
+  fin
+variables
+  R-info:robot1
+comenzar
+  AsignarArea(R-info,ciudad)
+  Iniciar(R-info,1,1)
+fin

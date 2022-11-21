@@ -1,0 +1,36 @@
+programa ejem6
+procesos
+  proceso contarpapeles (ES papeles: numero)
+  comenzar
+    papeles:= 0
+    mientras HayPapelEnLaEsquina
+      tomarPapel
+      papeles:= papeles +1
+    repetir papeles
+      depositarPapel
+  fin
+areas
+  ciudad : AreaC (1,1,100,100)
+robots
+  robot robot1
+  variables
+    exacto4papeles, papelesEsquina : numero
+  comenzar
+    Pos(1,10)
+    derecha
+    exacto4papeles:= 0
+    repetir 99
+      contarpapeles (papelesEsquina)
+      si (papelesEsquina = 4)
+        exacto4papeles:= exacto4papeles +1
+      mover
+    si (papelesEsquina =4)
+      exacto4papeles:= exacto4papeles +1
+    Informar(exacto4papeles)
+  fin
+variables
+  R-info:robot1
+comenzar
+  AsignarArea(R-info,ciudad)
+  Iniciar(R-info,1,1)
+fin
