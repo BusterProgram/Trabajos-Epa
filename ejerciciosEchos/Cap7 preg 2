@@ -1,0 +1,49 @@
+programa nombrePrograma
+procesos
+  proceso trasladarflor (ES floresjuntadas : numero)
+  variables
+    cantfloresq: numero
+  comenzar
+    cantfloresq:= 0
+    mientras HayFlorEnLaEsquina
+      tomarFlor
+      cantfloresq:= cantfloresq +1
+      floresjuntadas:= floresjuntadas +1
+    Pos(PosAv, PosCa +1)
+    repetir cantfloresq
+      depositarFlor
+    Pos(PosAv, PosCa -1)
+  fin
+  proceso recorreryjuntar (ES floresjuntadas : numero ; E calle : numero)
+  comenzar
+    Pos(1,calle)
+    repetir 99
+      mientras HayFlorEnLaEsquina
+        trasladarflor(floresjuntadas)
+      mover
+    si HayFlorEnLaEsquina
+      trasladarflor(floresjuntadas)
+  fin   
+areas
+  ciudad: AreaC (1,1,100,100)
+robots
+  robot robot1
+  variables
+    calle : numero
+    floresjuntadas : numero
+  comenzar
+    derecha
+    calle:= 1
+    floresjuntadas:= 0
+    repetir 5
+      recorreryjuntar(floresjuntadas, calle)
+      calle:= calle +2
+    recorreryjuntar(floresjuntadas, calle)
+    Informar(floresjuntadas)
+  fin
+variables
+  Rinfo: robot1
+comenzar
+  AsignarArea (Rinfo,ciudad)
+  Iniciar (Rinfo,1,1)
+fin

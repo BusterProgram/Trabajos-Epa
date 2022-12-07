@@ -1,0 +1,40 @@
+programa nombrePrograma
+procesos
+  proceso sinmodificaravenida(ES flores : numero)
+  variables
+    cant: numero
+  comenzar
+    cant:= 0
+    mientras HayFlorEnLaEsquina
+      tomarFlor
+      cant:= cant +1
+      flores:= flores +1
+    repetir cant
+      depositarFlor
+  fin
+  proceso avenida (ES flores : numero)
+  comenzar
+    mientras(HayFlorEnLaEsquina)|(HayPapelEnLaEsquina)
+      sinmodificaravenida (flores)
+      mover
+    si (flores>=45)
+      Informar(flores)
+  fin
+areas
+  ciudad: AreaC (1,1,100,100)
+robots
+  robot robot1
+  variables
+    flores : numero
+  comenzar
+    repetir 99
+      avenida(flores)
+      Pos(PosAv+1,1)
+      flores:= 0
+  fin
+variables
+  Rinfo: robot1
+comenzar 
+  AsignarArea (Rinfo,ciudad)
+  Iniciar (Rinfo,1,1)
+fin

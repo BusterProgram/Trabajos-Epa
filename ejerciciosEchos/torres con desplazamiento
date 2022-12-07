@@ -1,0 +1,31 @@
+programa Captitulo7Pregunta6
+procesos
+  proceso cuadrado
+  comenzar
+    repetir 4
+      mover
+      derecha
+  fin
+  proceso torre
+  comenzar
+    repetir 5
+      cuadrado
+      Pos(PosAv,PosCa+2)
+  fin
+areas
+  ciudad:AreaC(1,1,100,100)
+robots
+  robot robot1
+  variables
+    vacias: numero
+  comenzar
+    repetir 5
+      torre
+      Pos(PosAv+2,1)
+  fin
+variables
+  R-Info: robot1
+comenzar
+  AsignarArea(R-Info,ciudad)
+  Iniciar(R-Info,1,1)
+fin

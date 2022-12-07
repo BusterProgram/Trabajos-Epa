@@ -1,0 +1,29 @@
+programa Captitulo7Pregunta6
+procesos
+  proceso UnaMenosV2 ( E FloresIniciales : numero)
+  variables
+    cuantas : numero
+  comenzar
+    cuantas := FloresIniciales
+    mientras (PosCa<11)
+      repetir cuantas
+        depositarFlor
+      mover
+      cuantas := cuantas - 1
+  fin
+areas
+  ciudad:AreaC(1,1,100,100)
+robots
+  robot robot1
+  variables
+    cuantas: numero
+  comenzar
+    cuantas:= 12
+    UnaMenosV2(cuantas)
+  fin
+variables
+  R-Info: robot1
+comenzar
+  AsignarArea(R-Info,ciudad)
+  Iniciar(R-Info,1,1)
+fin
