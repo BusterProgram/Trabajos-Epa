@@ -1,0 +1,34 @@
+programa LimpiarEsquina
+procesos
+  proceso rectangulo (E base: numero; E altura: numero)
+  comenzar
+    repetir 2
+      repetir altura
+        mover
+      derecha
+      repetir base
+        mover
+      derecha 
+  fin
+areas
+  ciudad: AreaC (1,1,100,100)
+robots
+  robot robot1
+  variables
+    base: numero
+    altura: numero
+  comenzar
+    base:= 19
+    altura:= 5
+    repetir 5
+      rectangulo(base,altura)
+      Pos(PosAv+2,PosCa +altura)
+      base:= base - 4
+      altura:= altura - 1
+  fin
+variables
+  Rinfo: robot1
+comenzar
+  AsignarArea (Rinfo,ciudad)
+  Iniciar (Rinfo,1,1)
+fin

@@ -1,0 +1,33 @@
+programa LimpiarEsquina
+procesos
+  proceso escalon (E base: numero; E altura: numero)
+  comenzar
+    repetir altura
+      mover
+    derecha
+    repetir base
+      mover
+    derecha
+    repetir 2
+      derecha
+  fin
+areas
+  ciudad: AreaC (1,1,100,100)
+robots
+  robot robot1
+  variables
+    base: numero
+    altura: numero
+  comenzar
+    base:= 2
+    altura:= 1
+    repetir 3
+      escalon(base,altura)
+      base:= base +1
+  fin
+variables
+  Rinfo: robot1
+comenzar
+  AsignarArea (Rinfo,ciudad)
+  Iniciar (Rinfo,1,1)
+fin
