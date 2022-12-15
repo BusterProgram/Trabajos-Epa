@@ -1,0 +1,52 @@
+programa nombrePrograma
+procesos
+  proceso juntarflores (ES flores:numero)
+  comenzar
+    flores:= 0
+    mientras HayFlorEnLaEsquina
+      tomarFlor
+      flores:=flores+1
+    repetir flores
+      depositarFlor
+  fin
+  proceso cuadrado ( ES Esqsinpapeles: numero;E lado: numero)
+  variables
+    Esq10flores: numero
+    Esqsinpapeles:numero
+    flores:numero
+  comenzar
+    Esq10flores:= 0
+    Esqsinpapeles:= 0
+    repetir 4
+      repetir lado
+        juntarflores(flores)
+        si (flores=10)
+          Esq10flores:=Esq10flores+1
+        si ~(HayPapelEnLaEsquina)
+          Esqsinpapeles:= Esqsinpapeles+1
+        mover
+      derecha
+    Informar(Esq10flores)
+  fin
+areas
+  ciudad: AreaC (1,1,100,100)
+robots
+  robot robot1
+  variables
+    lado:numero
+    Esqsinpapeles:numero
+    flores:numero
+  comenzar
+    lado:= 3
+    cuadrado(Esqsinpapeles,lado)
+    mientras (Esqsinpapeles<>5)
+      lado:=lado +2
+      Pos(1,PosCa+1)
+      cuadrado(Esqsinpapeles,lado)
+  fin
+variables
+  Rinfo: robot1
+comenzar
+  AsignarArea (Rinfo,ciudad)
+  Iniciar (Rinfo,1,1)
+fin
