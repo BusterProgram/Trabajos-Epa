@@ -1,0 +1,49 @@
+programa Captitulo7Pregunta6
+procesos
+  proceso contarflores (ES flores:numero)
+  comenzar
+    mientras HayFlorEnLaEsquina
+      tomarFlor
+      flores:=flores+1
+  fin
+  proceso contarpapeles (ES papeles:numero)
+  comenzar
+    mientras HayPapelEnLaEsquina
+      tomarFlor
+      papeles:=papeles+1
+  fin
+  proceso avenida (ES papeles:numero; ES flores: numero)
+  comenzar
+    repetir 99
+      contarflores(flores)
+      contarpapeles(papeles)
+      mover
+    contarflores(flores)
+    contarpapeles(papeles)
+  fin
+  proceso avenidas (ES p:numero)
+  variables
+    flores:numero
+    papeles:numero
+  comenzar
+    flores:=25
+    mientras ~(flores=25)
+      avenida(papeles,flores)
+      Pos(PosAv+1,1) 
+  fin
+areas
+  ciudad:AreaC(1,1,100,100)
+robots
+  robot robot1
+  variables
+    flores:numero
+    p:numero
+  comenzar
+    avenidas(p)
+  fin
+variables
+  R-Info: robot1
+comenzar
+  AsignarArea(R-Info,ciudad)
+  Iniciar(R-Info,1,1)
+fin

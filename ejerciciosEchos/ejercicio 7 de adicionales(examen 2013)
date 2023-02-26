@@ -1,0 +1,53 @@
+programa Cap7Preg11
+procesos
+  proceso JuntarP(ES papeles:numero)
+  comenzar
+    mientras(HayPapelEnLaEsquina)
+      tomarPapel
+      papeles:=papeles+1
+  fin
+  proceso JuntarF(ES flores:numero)
+  comenzar
+    mientras(HayFlorEnLaEsquina)
+      tomarFlor
+      flores:=flores+1
+  fin
+  proceso recorrercalle8(ES papeles:numero; ES flores:numero)
+  variables
+    papeles:numero
+    flores:numero
+  comenzar
+    Pos(8,1)
+    mientras(HayFlorEnLaEsquina)|(HayPapelEnLaEsquina)
+      JuntarP(papeles)
+      JuntarF(flores)
+      mover
+  fin
+  proceso rectangulo (E alto:numero; E base: numero)
+  comenzar
+    repetir 2
+      repetir alto
+        mover
+      derecha
+      repetir base
+        mover
+      derecha
+  fin
+areas
+  ciudad:AreaC(1,1,100,100)
+robots
+  robot robot1
+  variables
+    flores1:numero
+    papeles:numero
+  comenzar
+    recorrercalle8(papeles,flores1)
+    Pos(1,1)
+    rectangulo(papeles,flores1)
+  fin
+variables
+  R-Info:robot1
+comenzar
+  AsignarArea(R-Info,ciudad)
+  Iniciar(R-Info,1,1)
+fin

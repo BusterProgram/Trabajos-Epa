@@ -1,0 +1,53 @@
+programa Captitulo7Pregunta6
+procesos
+  proceso contarflores (ES flores:numero)
+  variables
+    aux:numero
+  comenzar
+    flores:= 0
+    mientras HayFlorEnLaEsquina
+      tomarFlor
+      flores:=flores+1
+      aux:=aux+1
+    repetir aux
+      depositarFlor
+  fin
+  proceso cuadrado (E lado:numero; ES esqsinpapeles:numero)
+  variables
+    flores:numero
+    esq10flores:numero
+  comenzar
+    esq10flores:=0
+    esqsinpapeles:=0
+    repetir 4
+      repetir lado
+        contarflores(flores)
+        si (flores=10)
+          esq10flores:=esq10flores+1
+        si ~(HayPapelEnLaEsquina)
+          esqsinpapeles:=esqsinpapeles+1
+        mover
+      derecha
+    Informar(esqsinpapeles)
+  fin
+areas
+  ciudad:AreaC(1,1,100,100)
+robots
+  robot robot1
+  variables
+    lado:numero
+    esqsinpapeles:numero
+  comenzar
+    lado:=3
+    cuadrado(lado,esqsinpapeles)
+    mientras (esqsinpapeles<>5)
+      lado:=lado+2
+      Pos(1,PosCa+1)
+      cuadrado(lado,esqsinpapeles)
+  fin
+variables
+  R-Info: robot1
+comenzar
+  AsignarArea(R-Info,ciudad)
+  Iniciar(R-Info,1,1)
+fin
